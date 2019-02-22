@@ -1,0 +1,33 @@
+.p-contents-overlay {
+  position: fixed;
+  top: 0; bottom: 0; right: 0; left: 0;
+  z-index: 500;
+  background-color: #fff;
+  //
+  // interaction
+  //
+  opacity: 0;
+  pointer-events: none;
+  // transform: scaleX(0);
+  transition-property: opacity;
+  &.is-expand {
+    opacity: 1;
+    // transform-origin: left;
+    // transform: scaleX(1);
+    transition-timing-function: $easeOutCubic;
+    transition-duration: 0.4s;
+  }
+  &.is-expand-moment {
+    opacity: 1;
+    // transform-origin: left;
+    // transform: scaleX(1);
+    transition-timing-function: $easeOutCubic;
+  }
+  &.is-shrink {
+    opacity: 0;
+    // transform-origin: right;
+    // transform: scaleX(0);
+    transition-timing-function: $easeInCubic;
+    transition-duration: 0.4s;
+  }
+}

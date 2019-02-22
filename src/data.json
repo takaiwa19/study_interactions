@@ -12,6 +12,14 @@
       "description": "",
       "path": "/",
       "ogpImg": "ogp.jpg"
+    },
+    "page01": {
+      "id": "page01",
+      "title": "",
+      "keywords": "",
+      "description": "",
+      "path": "/page01/",
+      "ogpImg": "ogp.jpg"
     }
   }
 }

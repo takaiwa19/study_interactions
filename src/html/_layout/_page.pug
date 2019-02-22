@@ -10,14 +10,20 @@ html(lang="ja")
   head
     include ./_head.pug
   body
-    .l-page(data-page-id=page.id)
+    .l-page.js-pjax-page(data-page-id=page.id)
+      .p-contents-overlay.js-pjax-overlay.is-expand
+      .p-progress.js-pjax-progress
+        .p-progress__marker
+      .l-dummy-scroll.js-dummy-scroll
+      .js-pjax-contents-before
+        block contentFixedBefore
       include ./_gh.pug
-      block contentFixedBefore
-      .l-contents
+      .l-contents.js-contents.js-pjax-contents
         // Start to define the main content.
         block contentStatic
         // End to define the main content.
-      block contentFixedAfter
+      .js-pjax-contents-after
+        block contentFixedAfter
       include ./_gf.pug
     block script
     script(src=`${data.meta.path}/js/main.js` async)
