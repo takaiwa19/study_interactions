@@ -161,7 +161,7 @@ export default class PjaxWithPreload {
   }
   async transitEnd() {
     // The transition effect after to switch page.
-    await sleep(100);
+    await sleep(500);
     this.elm.overlay.classList.remove('is-expand');
     this.elm.overlay.classList.remove('is-expand-moment');
     this.elm.overlay.classList.add('is-shrink');

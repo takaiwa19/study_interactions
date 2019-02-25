@@ -1,0 +1,60 @@
+.p-hamberger {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  @include l-more-than-mobile {
+    width: 11.4375rem;
+  }
+  @include l-mobile {
+
+  }
+  &:before {
+    width: 7.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: 'Menu';
+    position: absolute;
+    top: 0; right: 3.9375rem;
+    background-color: #28262c;
+    color: #fff;
+    font-family: $font-en-lato;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    cursor: pointer;
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #28262c;
+    cursor: pointer;
+    @include l-more-than-mobile {
+      width: 60px;
+      height: 60px;
+    }
+    @include l-mobile {
+
+    }
+  }
+  &__line {
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    &--01 {
+      margin-bottom: 2px;
+    }
+    &--02 {
+      margin-bottom: 2px;
+    }
+    &--03 {
+
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import Hover from 'js-util/Hover';
+import buildGlobalNavi from '../../../modules/common/buildGlobalNavi';
 
 // initBeforeTransit method: before scrollManager.resize run.
 const initBeforeTransit = (contentsArr, modules, isPageLoaded) => {
@@ -9,6 +10,8 @@ const initBeforeTransit = (contentsArr, modules, isPageLoaded) => {
       new Hover(elmHover[i]);
     }
   });
+
+  buildGlobalNavi();
 
   // ページロード直後とページ遷移後の初期化を区別
   if (!isPageLoaded) {

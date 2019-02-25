@@ -1,4 +1,25 @@
 // Start to define the global header.
 .l-gh
-
+  .p-global-navi#vue-global-navi(
+    :class = '{ "is-opened-navi" : isOpenedNavi, "is-closed-navi" : !isOpenedNavi}'
+    )
+    .p-hamberger(
+      @click="toggle"
+      )
+      .p-hamberger__lines
+        .p-hamberger__line.p-hamberger__line--01
+        .p-hamberger__line.p-hamberger__line--02
+        .p-hamberger__line.p-hamberger__line--03
+    .p-global-navi__items
+      .p-global-navi__items-bg
+      ul.p-global-navi__items-wrap
+        li.p-global-navi__item
+          a(href="/case03/")
+            |case03
+        li.p-global-navi__item
+          a(href="/case02/")
+            |case02
+        li.p-global-navi__item
+          a(href="/case01/")
+            |case01
 // End to define the global header.

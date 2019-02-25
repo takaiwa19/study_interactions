@@ -15,7 +15,7 @@
     // transform-origin: left;
     // transform: scaleX(1);
     transition-timing-function: $easeOutCubic;
-    transition-duration: 0.4s;
+    transition-duration: 0.6s;
   }
   &.is-expand-moment {
     opacity: 1;
@@ -28,6 +28,6 @@
     // transform-origin: right;
     // transform: scaleX(0);
     transition-timing-function: $easeInCubic;
-    transition-duration: 0.4s;
+    transition-duration: 0.6s;
   }
 }
