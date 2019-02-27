@@ -1,25 +1,35 @@
 .p-index-header {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  width: 500px;
+  height: 300px;
+  position: absolute;
   z-index: 10;
-  color: #fff;
+  top: 30%;
+  left: 120px;
   text-align: center;
   &__title {
-    line-height: 1.1;
-    margin-top: 0;
-    margin-bottom: 20px;
-    @include fontSizeAll(64, 56, 42);
-    font-weight: 400;
-  }
-  &__excerpt {
-    margin: 0;
-  }
-  &__btn {
+    min-width: 150px;
     display: inline-block;
-    margin-top: 30px;
+    position: absolute;
+    z-index: 11;
+    padding: 0 19px;
+    color: #fff;
+    font-family: $font-en-oswald;
+    @include fontSize(60);
+    text-align: center;
+    line-height: 1.17;
+    &--01 {
+      background-color: #48a38c;
+      top: 0; left: 0;
+    }
+    &--02 {
+      background-color: #f65d80;
+      z-index: 10;
+      top: 60px; left: 120px;
+      transform: rotate(-5deg)
+    }
+    &--03 {
+      background-color: #252639;
+      top: 125px; left: 60px;
+    }
   }
 }

@@ -7,11 +7,21 @@ block vars
 block contentFixedBefore
 
 block contentStatic
-  //- h1
-  //-   |index
-  //- p
-  //-   a(href="/page01/")
-  //-     |To page01
+  .p-index-kv
+    h1.p-index-header
+      span.p-index-header__title.p-index-header__title--01
+        |This is my practice
+      br
+      span.p-index-header__title.p-index-header__title--02
+        |of
+      br
+      span.p-index-header__title.p-index-header__title--03
+        |Interaction
+    .p-index-kv-image
+      canvas.p-index-kv-image__canvas#kv-canvas(
+        width="1200"
+        height="900"
+        )
   
 
 block contentFixedAfter

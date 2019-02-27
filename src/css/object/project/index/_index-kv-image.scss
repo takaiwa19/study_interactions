@@ -1,0 +1,22 @@
+.p-index-kv-image {
+
+  @include l-more-than-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 0;
+  }
+  @include l-mobile {
+
+  }
+  canvas {
+    position: relative;
+    z-index: 0;
+  }
+  // // &__canvas {
+  // //   width: 400px;
+  // //   height: 300px;
+  // // }
+}

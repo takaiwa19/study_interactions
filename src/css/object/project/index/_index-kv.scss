@@ -1,0 +1,10 @@
+.p-index-kv {
+  @include l-more-than-mobile {
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+  }
+  @include l-mobile {
+
+  }
+}
