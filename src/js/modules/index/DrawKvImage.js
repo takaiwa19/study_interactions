@@ -5,7 +5,7 @@ export default class DrawKvImage {
     this.canvas = document.getElementById('kv-canvas');
     this.ctx = this.canvas.getContext('2d');
     this.MAX = 5;
-    this.RADIUS = [500, 400, 350, 500, 450];
+    this.RADIUS = [600, 480, 420, 600, 540];
     this.FPS = 60;
     this.CENTER = {
       x: this.canvas.width / 2,
@@ -61,10 +61,10 @@ export default class DrawKvImage {
     //グラデーション領域をセット
     var grad  = this.ctx.createLinearGradient(0,0, this.canvas.width,this.canvas.height);
     // グラデーション終点のオフセットと色をセット
-    grad.addColorStop(0,"#f9c7c0");
-    grad.addColorStop(0.4,"#f9c7c0");
-    grad.addColorStop(0.8,"#04acaa");
-    grad.addColorStop(1,"#04acaa");
+    grad.addColorStop(0,"#9F98E8");
+    grad.addColorStop(0.4,"#9F98E8");
+    grad.addColorStop(0.65,"#AFF6CF");
+    grad.addColorStop(1,"#AFF6CF");
     // グラデーションをfillStyleプロパティにセット
     this.ctx.fillStyle = grad;
     // 矩形を描画

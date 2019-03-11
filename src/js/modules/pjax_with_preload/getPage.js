@@ -3,7 +3,7 @@ export default function(pageId, page) {
     case 'index':
       return page.index;
       break;
-    case 'page01':
+    case 'case01':
       return page.lower;
       break;
     default:

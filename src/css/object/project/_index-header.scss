@@ -1,9 +1,9 @@
 .p-index-header {
-  width: 500px;
+  width: 600px;
   height: 300px;
   position: absolute;
   z-index: 10;
-  top: 30%;
+  top: 28%;
   left: 120px;
   text-align: center;
   &__title {
@@ -11,25 +11,103 @@
     display: inline-block;
     position: absolute;
     z-index: 11;
-    padding: 0 19px;
-    color: #fff;
+    padding: 5px 19px 10px;
+    color: #252639;
     font-family: $font-en-oswald;
     @include fontSize(60);
     text-align: center;
-    line-height: 1.17;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      z-index: 0;
+    }
     &--01 {
-      background-color: #48a38c;
       top: 0; left: 0;
+      transform: rotate(-5.5deg);
+      &::after {
+        background-color: #AFBED8;
+      }
     }
     &--02 {
-      background-color: #f65d80;
       z-index: 10;
-      top: 60px; left: 120px;
-      transform: rotate(-5deg)
+      top: 80px; left: 120px;
+      color: #E5E5E5;
+      transform: rotate(-2deg);
+      &::after {
+        background-color: #533A7B;
+      }
     }
     &--03 {
-      background-color: #252639;
-      top: 125px; left: 60px;
+      top: 155px; left: 60px;
+      transform: rotate(-1deg);
+      &::after {
+        background-color: #74C99A;
+      }
+    }
+    &-label {
+      position: relative;
+      z-index: 11;
+    }
+  }
+  //
+  //interaction
+  //
+  @keyframes bgSpread{
+    0%   {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  @keyframes showHeading {
+    0% {
+      transform: translate3D(0, 100%, 0);
+    }
+    100% {
+      transform: translate3D(0, 0, 0);
+    }
+  }
+  &__title {
+    overflow: hidden;
+    &::after {
+      transform: scaleX(0);
+      transform-origin: left;
+      animation-name: bgSpread;
+      animation-duration: 2s;
+      animation-timing-function: $easeOutExpo;
+      animation-fill-mode: forwards;
+    }
+    &--01 {
+      &::after {
+        animation-delay: 2s;
+      }
+
+    }
+    &--02 {
+      &::after {
+        animation-delay: 2.1s;
+        transform-origin: right;
+      }
+    }
+    &--03 {
+      &::after {
+        animation-delay: 2.2s;
+      }
+    }
+    &-label {
+      opacity: 1;
+      .c-split-str {
+        animation-name: showHeading;
+        animation-duration: 0.8s;
+        animation-fill-mode: both;
+        animation-timing-function: ease;
+        @include iterateAnimationDelay(20, 0.02, 2.5);
+      }
     }
   }
 }

@@ -13,13 +13,14 @@
       "path": "/",
       "ogpImg": "ogp.jpg"
     },
-    "page01": {
-      "id": "page01",
+    "case01": {
+      "id": "case01",
       "title": "",
       "keywords": "",
       "description": "",
-      "path": "/page01/",
+      "path": "/case01/",
       "ogpImg": "ogp.jpg"
     }
+
   }
 }

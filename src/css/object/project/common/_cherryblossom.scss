@@ -1,0 +1,29 @@
+.p-cherryblossom {
+  width: 44px;
+  height: 25px;
+  background-color: #FFCFDF;
+  position: relative;
+  margin-bottom: 50px;
+  &:before, &:after {
+    content: '';
+    display: block;
+  }
+  &:before {
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-left: 22px solid #FFCFDF;
+    border-right: 22px solid #FFCFDF;
+    position: absolute;
+    top: -12px;
+  }
+  &:after {
+    width: 0;
+    height: 0;
+    border-top: 12px solid #FFCFDF;
+    border-left: 22px solid transparent;
+    border-right: 22px solid transparent;
+    position: absolute;
+    bottom: -12px;
+  }
+}
