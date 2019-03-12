@@ -18,6 +18,8 @@ const CLASSNAME_LINK = 'js-pjax-link';
 const CLASSNAME_LINK_MOMENT = 'js-pjax-link-moment';
 const CLASSNAME_PAGE = 'js-pjax-page';
 const CLASSNAME_CONTENTS = 'js-pjax-contents';
+const CLASSNAME_TRANSITION_ARRIVED = 'is-arrived-contents';
+const CLASSNAME_TRANSITION_LEAVED = 'is-leaved-contents';
 const CLASSNAME_CONTENTS_BEFORE = 'js-pjax-contents-before';
 const CLASSNAME_CONTENTS_AFTER = 'js-pjax-contents-after';
 
@@ -89,6 +91,9 @@ export default class PjaxWithPreload {
         console.error(`A post by axios had an error : ${error.response.status} ${error.response.statusText}`);
         if (error.response.status === 404) this.replaceContent(error.response);
       });
+
+    // fire the page transition effect.
+    this.leave();
   }
   async replaceContent(response) {
     console.log('replaceContent');
@@ -166,6 +171,18 @@ export default class PjaxWithPreload {
     this.elm.overlay.classList.remove('is-expand-moment');
     this.elm.overlay.classList.add('is-shrink');
     this.elm.progress.classList.add('is-hidden');
+    // fire the page transition effect.
+    this.arrive();
+  }
+  arrive() {
+    // toggle CSS classes for to add page transition effect to the content element that exists after the transition.
+    this.elm.contents.classList.add(CLASSNAME_TRANSITION_ARRIVED);
+    this.elm.contents.classList.remove(CLASSNAME_TRANSITION_LEAVED);
+  }
+  leave() {
+    // toggle CSS classes for to add page transition effect to the content element that exists before the transition.
+    this.elm.contents.classList.remove(CLASSNAME_TRANSITION_ARRIVED);
+    this.elm.contents.classList.add(CLASSNAME_TRANSITION_LEAVED);
   }
   on() {
     // On several events.

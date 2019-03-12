@@ -1,14 +1,54 @@
 .p-case01-kv {
   height: 100vh;
   position: relative;
-  background-image: url(../img/case01/kv.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  z-index: 0;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 0;
+    background-image: url(../img/case01/kv.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   &::after {
     content: '';
     display: block;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 1;
     background-color: rgba(255, 255, 255, 0.2);
+  }
+  &__title {
+    position: absolute;
+    top: 35%; left: 10%;
+    z-index: 10;
+    color: #fff;
+    font-family: $font-en-poppins;
+    font-weight: 700;
+    @include fontSize(56);
+    letter-spacing: 0.05em;
+  }
+  //
+  //interaction
+  //
+  opacity: 0;
+  &::before {
+    transform: scale(1.2);
+  }
+  .is-arrived-contents &{
+      opacity: 1;
+      transition-duration: 2s;
+      transition-delay: 0.5s;
+      &::before {
+        transform: scale(1);
+        transition-duration: 1.5s;
+        transition-delay: 0.5s;
+      }
+    }
+  .is-leaved-contents &{
+      opacity: 0;
+      transition-duration: .1s;
   }
 }
