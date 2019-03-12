@@ -1,0 +1,21 @@
+.p-global-home {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  top: 2rem; left: 2rem;
+  background-color: #28262c;
+  border-radius: 50%;
+  text-decoration: none;
+  &__label {
+    color: #fff;
+    font-family: $font-en-lato;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+}
