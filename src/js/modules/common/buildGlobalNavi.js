@@ -13,7 +13,6 @@ export default function () {
       // for (var i = 0; i < elmHover.length; i++) {
       //   new Hover(elmHover[i]);
       // }
-
     },
     computed: {
 
@@ -21,6 +20,12 @@ export default function () {
     methods: {
       toggle: function() {
         this.isOpenedNavi = !this.isOpenedNavi;
+      },
+      addModules: function(modules) {
+        this.modules = modules;
+      },
+      closeNavi: function() {
+        this.isOpenedNavi = false;
       }
     },
   });

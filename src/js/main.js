@@ -4,12 +4,14 @@ import UaParser from 'ua-parser-js';
 const sleep = require('js-util/sleep');
 const Pjax = require('./modules/pjax_with_preload/PjaxWithPreload').default;
 const ScrollManager = require('./modules/smooth_scroll_manager/SmoothScrollManager').default;
+const BuildGlobalNavi = require('./modules/common/buildGlobalNavi').default;
 const Renderer = require('./modules/common/Renderer').default;
 
 const modules = {
   renderer: new Renderer(),
   pjax: new Pjax(),
   scrollManager: new ScrollManager(),
+  gNav: BuildGlobalNavi()
 };
 const uaParser = new UaParser();
 const link = document.querySelector('link[as=style]');
@@ -18,6 +20,7 @@ const link = document.querySelector('link[as=style]');
 modules.renderer.modules = modules;
 modules.pjax.modules = modules;
 modules.scrollManager.modules = modules;
+modules.gNav.addModules(modules);
 
 const init = async () => {
   // preload stylesheet other than Google Chrome browser.
