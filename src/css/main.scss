@@ -10,6 +10,8 @@ Version: 1.0.0
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Ruslan+Display');
 
 // ==========================================================================
 // Foundation
@@ -63,7 +65,8 @@ Version: 1.0.0
 @import "object/project/index/_index-kv-image";
 @import "object/project/case01/_case01";
 @import "object/project/case01/_case01-kv";
-@import "object/project/case01/_case01-section";
+@import "object/project/case01/_case01-gallery";
+@import "object/project/case01/_case01-section-1";
 
 // -----------------------------------------------------------------
 // Utility
