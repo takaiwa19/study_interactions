@@ -20,7 +20,14 @@
       "description": "",
       "path": "/case01/",
       "ogpImg": "ogp.jpg"
+    },
+    "case02": {
+      "id": "case02",
+      "title": "",
+      "keywords": "",
+      "description": "",
+      "path": "/case02/",
+      "ogpImg": "ogp.jpg"
     }
-
   }
 }
