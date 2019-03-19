@@ -3,4 +3,5 @@ module.exports = {
   blank: require('./init/blank.js'),
   index: require('./init/index.js'),
   lower: require('./init/lower.js'),
+  case01: require('./init/case01.js'),
 }

@@ -1,0 +1,52 @@
+.p-case01-filter {
+  &__items {
+    display: flex;
+  }
+  &__item {
+    width: 50vw;
+
+    &__image {
+      position: relative;
+      z-index: 1;
+      img {
+        width: 100%;
+        display: block;
+      }
+      .under {
+        position: relative;
+        z-index: 1;
+      }
+      .on {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 10;
+      }
+    }
+  }
+  svg {
+    display: none;
+  }
+  //
+  //interaction
+  //
+  &__item {
+    cursor: pointer;
+    &__image {
+      .on {
+        opacity: 1;
+        filter: grayscale(1) url(#monochrome);
+        transition-duration: .5s;
+        transition-property: opacity;
+      }
+      .under {
+
+      }
+    }
+    &.is-over {
+      .on {
+        opacity: 0;
+      }
+
+    }
+  }
+}

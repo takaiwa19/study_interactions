@@ -29,19 +29,21 @@ block contentStatic
           data-ratio-y = 0.015
           )
           img(src="/study_interactions/img/case01/image02.jpg", alt="")
-        .p-case01-section-1__text
+        h2.p-case01-section-1__heading
           |Hi!
           br
           |I'm ROBOT MAN.
+        .p-case01-section-1__text
+          |This is the story about a mysterious world...
           
-    .p-case01-gallery
-      .p-case01-gallery__items
-        .p-case01-gallery__item.js-hover
-          .p-case01-gallery__item__image
+    .p-case01-filter
+      .p-case01-filter__items
+        .p-case01-filter__item.js-hover
+          .p-case01-filter__item__image
             img.on(src="/study_interactions/img/case01/gallery01.jpg", alt="")
             img.under(src="/study_interactions/img/case01/gallery01.jpg", alt="")
-        .p-case01-gallery__item.js-hover
-          .p-case01-gallery__item__image
+        .p-case01-filter__item.js-hover
+          .p-case01-filter__item__image
             img.on(src="/study_interactions/img/case01/gallery02.jpg", alt="")
             img.under(src="/study_interactions/img/case01/gallery02.jpg", alt="")
       svg
@@ -53,15 +55,12 @@ block contentStatic
             feFuncG(type="linear" slope="1.5" intercept="0.05")
             feFuncB(type="linear" slope="1.5" intercept="0.05")
           feComponentTransfer
-            feFuncR(type="table" tableValues="0.3882 0.4156")
-            feFuncG(type="table" tableValues="0.2784 0.5725")
-            feFuncB(type="table" tableValues="0.2509 0.7882")
-            //- feFuncR(type="table" tableValues="0.2039 1")
-            //- feFuncG(type="table" tableValues="0.5686 1")
-            //- feFuncB(type="table" tableValues="0.8 1")
+            feFuncR(type="table" tableValues="0.3882 0.898")
+            feFuncG(type="table" tableValues="0.2784 0.87")
+            feFuncB(type="table" tableValues="0.2509 0.87")
             feFuncA(type="table" tableValues="0 1")
           
-      
-  
+    .p-case01-pixi
+      //- canvas.p-case01-pixi__canvas
 
 block contentFixedAfter

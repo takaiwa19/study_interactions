@@ -4,7 +4,7 @@ export default function(pageId, page) {
       return page.index;
       break;
     case 'case01':
-      return page.lower;
+      return page.case01;
       break;
     default:
       return page.blank;
