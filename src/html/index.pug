@@ -11,15 +11,18 @@ block contentStatic
     h1.p-index-header
       span.p-index-header__title.p-index-header__title--01
         .p-index-header__title-label
-          +splitStr('This is my practice') 
+          +splitStr('This is my practice')
+        .p-index-header__title-bg
       br
       span.p-index-header__title.p-index-header__title--02
         .p-index-header__title-label
           +splitStr('of')
+        .p-index-header__title-bg
       br
       span.p-index-header__title.p-index-header__title--03
         .p-index-header__title-label
           +splitStr('Interaction')
+        .p-index-header__title-bg
     .p-index-kv-image
       canvas.p-index-kv-image__canvas#kv-canvas(
         width="1200"

@@ -1,25 +1,39 @@
 .p-index-header {
-  width: 600px;
-  height: 300px;
   position: absolute;
   z-index: 10;
-  top: 28%;
-  left: 120px;
   text-align: center;
+  @include l-more-than-mobile {
+    width: 600px;
+    height: 300px;
+    top: 28%; left: 120px;
+  }
+  @include l-mobile {
+    width: 300px;
+    height: 200px;
+    top: 30%; left: 20px;
+  }
   &__title {
-    min-width: 150px;
     display: inline-block;
     position: absolute;
     z-index: 11;
-    padding: 5px 19px 10px;
     color: #252639;
     font-family: $font-en-oswald;
-    @include fontSize(60);
     text-align: center;
-    line-height: 1.1;
     letter-spacing: 0.01em;
-    &::after {
-      content: '';
+    @include l-more-than-mobile {
+      min-width: 150px;
+      padding: 5px 19px 10px;
+      @include fontSize(60);
+      line-height: 1.1;
+    }
+    @include l-mobile {
+      min-width: 100px;
+      padding: 5px 10px 5px;
+      @include fontSize(30);
+      line-height: 1.4;
+    }
+    &-bg {
+      // content: '';
       display: block;
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
@@ -28,23 +42,39 @@
     &--01 {
       top: 0; left: 0;
       transform: rotate(-5.5deg);
-      &::after {
+    }
+    &--01 & {
+      &-bg {
         background-color: #AFBED8;
       }
     }
     &--02 {
       z-index: 10;
-      top: 80px; left: 120px;
       color: #E5E5E5;
       transform: rotate(-2deg);
-      &::after {
+      @include l-more-than-mobile {
+        top: 80px; left: 120px;
+      }
+      @include l-mobile {
+        top: 45px; left: 60px;
+      }
+    }
+    &--02 & {
+      &-bg {
         background-color: #533A7B;
       }
     }
     &--03 {
-      top: 155px; left: 60px;
       transform: rotate(-1deg);
-      &::after {
+      @include l-more-than-mobile {
+        top: 155px; left: 60px;
+      }
+      @include l-mobile {
+        top: 90px; left: 40px;
+      }
+    }
+    &--03 & {
+      &-bg {
         background-color: #74C99A;
       }
     }
@@ -74,7 +104,7 @@
   }
   &__title {
     overflow: hidden;
-    &::after {
+    &-bg {
       transform: scaleX(0);
       transform-origin: left;
       animation-name: bgSpread;
@@ -82,20 +112,20 @@
       animation-timing-function: $easeOutExpo;
       animation-fill-mode: forwards;
     }
-    &--01 {
-      &::after {
+    &--01 &{
+      &-bg {
         animation-delay: 2s;
       }
 
     }
-    &--02 {
-      &::after {
+    &--02 &{
+      &-bg {
         animation-delay: 2.1s;
         transform-origin: right;
       }
     }
-    &--03 {
-      &::after {
+    &--03 &{
+      &-bg {
         animation-delay: 2.2s;
       }
     }

@@ -13,7 +13,8 @@
         .p-hamberger__line.p-hamberger__line--01
         .p-hamberger__line.p-hamberger__line--02
         .p-hamberger__line.p-hamberger__line--03
-    .p-global-navi__items
+        
+    .p-global-navi__items.u-dn-mobile
       .p-global-navi__items-bg
       ul.p-global-navi__items-wrap
         li.p-global-navi__item
@@ -25,4 +26,22 @@
         li.p-global-navi__item
           a(href="/case01/")
             |case01
+    
+    .p-global-navi-sp(
+      :class = '{ "is-opened-navi" : isOpenedNavi, "is-closed-navi" : !isOpenedNavi}'
+      )
+      .p-global-navi-sp__bg
+        .p-global-navi-sp__bg-item.p-global-navi-sp__bg-item--01
+        .p-global-navi-sp__bg-item.p-global-navi-sp__bg-item--02
+      ul.p-global-navi-sp__items
+        li.p-global-navi-sp__item
+          a(href="/case01/")
+            |case01
+        li.p-global-navi-sp__item
+          a(href="/case02/")
+            |case02
+        li.p-global-navi-sp__item
+          a(href="/case03/")
+            |case03
+        
 // End to define the global header.
