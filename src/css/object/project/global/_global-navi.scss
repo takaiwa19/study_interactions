@@ -1,12 +1,12 @@
 .p-global-navi {
   position: fixed;
   z-index: 1000;
-  top: 2rem; right: 2rem;
   @include l-more-than-mobile {
-
+    top: 2rem; right: 2rem;
   }
   @include l-mobile {
-
+    top: 1.5rem; right: 1rem;
+    pointer-events: none;
   }
   &__items {
     height: 60px;
@@ -15,14 +15,13 @@
     margin-top: 0;
     padding-left: 20px;
     padding-right: 20px;
-
     color: #fff;
     @include l-more-than-mobile {
-      height: 100%;
+      // height: 100%;
       right: 3.9375rem;
     }
     @include l-mobile {
-
+      display: none;
     }
     &-bg {
       position: absolute;
@@ -31,6 +30,7 @@
       background-color: #28262c;
     }
     &-wrap {
+      height: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -42,7 +42,7 @@
       list-style: none;
       color: #fff;
       @include l-more-than-mobile {
-        height: 100%;
+
         // right: 3.9375rem;
         // left: 0;
       }
@@ -71,23 +71,24 @@
       text-decoration: none;
     }
   }
+
   //
   //interaction
   //
-
   &__items {
     &-bg {
       transform: scaleX(0);
       transition-property: transform;
       transform-origin: right;
     }
-    &-wrap {
-
-    }
   }
   &__item {
     opacity: 0;
     transition-property: opacity;
+    pointer-events: none;
+  }
+  &.is-opened-navi {
+
   }
   &.is-opened-navi &{
     &__items {
@@ -100,11 +101,13 @@
       opacity: 1;
       transition-duration: 0.3s;
       @include iterateTransitionDelay(10, 0.05, 0.2);
+      @include l-more-than-mobile {
+        pointer-events: auto;
+      }
     }
   }
   &.is-closed-navi &{
     &__items {
-
       &-bg {
         transition: 0.5s;
       }
