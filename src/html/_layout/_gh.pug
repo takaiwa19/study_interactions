@@ -1,12 +1,12 @@
 // Start to define the global header.
 .l-gh
-  a.p-global-home.js-hover(href=`${path}`)
+  a.p-global-home.js-hover.js-cursor-hover(href=`${path}`)
     .p-global-home__label
       |Home
   .p-global-navi#vue-global-navi(
     :class = '{ "is-opened-navi" : isOpenedNavi, "is-closed-navi" : !isOpenedNavi}'
     )
-    .p-hamberger(
+    .p-hamberger.js-cursor-hover(
       @click="toggle"
       )
       .p-hamberger__lines

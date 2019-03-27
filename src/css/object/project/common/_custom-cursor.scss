@@ -1,0 +1,58 @@
+$cursor-color: mix(white, #dc5656, 25%);
+.p-custom-cursor {
+  @include l-more-than-mobile {
+    position: relative;
+    z-index: 10000;
+    &__dot, &__default, &__hover {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 10000;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+    &__default, &__hover {
+      background-color: rgba($cursor-color, 0.5);
+    }
+    &__dot {
+      width: 4px;
+      height: 4px;
+      background-color: #f84525;
+    }
+    &__default {
+      width: 40px;
+      height: 40px;
+    }
+    &__hover {
+      width: 80px;
+      height: 80px;
+
+    }
+    //
+    //interaction
+    //
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    &.is-shown {
+      opacity: 1;
+    }
+    &__default {
+      opacity: 1;
+      transition: opacity 0.4s ease-in-out;
+      &.is-enlarged {
+        opacity: 0;
+      }
+    }
+    &__hover {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+      transform-origin: center;
+      transition: opacity 0.3s ease-in-out,transform 0.4s ease-in-out;
+      &.is-enlarged {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}
