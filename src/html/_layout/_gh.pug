@@ -1,6 +1,6 @@
 // Start to define the global header.
 .l-gh
-  a.p-global-home.js-hover(href="/")
+  a.p-global-home.js-hover(href=`${path}`)
     .p-global-home__label
       |Home
   .p-global-navi#vue-global-navi(
@@ -18,13 +18,13 @@
       .p-global-navi__items-bg
       ul.p-global-navi__items-wrap
         li.p-global-navi__item
-          a(href="/case03/")
+          a(href=`${path}/case03/`)
             |case03
         li.p-global-navi__item
-          a(href="/case02/")
+          a(href=`${path}/case02/`)
             |case02
         li.p-global-navi__item
-          a(href="/case01/")
+          a(href=`${path}/case01/`)
             |case01
     
     .p-global-navi-sp(
@@ -35,13 +35,13 @@
         .p-global-navi-sp__bg-item.p-global-navi-sp__bg-item--02
       ul.p-global-navi-sp__items
         li.p-global-navi-sp__item
-          a(href="/case01/")
+          a(href=`${path}/case01/`)
             |case01
         li.p-global-navi-sp__item
-          a(href="/case02/")
+          a(href=`${path}/case02/`)
             |case02
         li.p-global-navi-sp__item
-          a(href="/case03/")
+          a(href=`${path}/case03/`)
             |case03
         
 // End to define the global header.

@@ -2,7 +2,8 @@
   "meta": {
     "websiteName": "",
     "keywords": "",
-    "themeColor": "#ffffff"
+    "themeColor": "#ffffff",
+    "path": "/study_interactions"
   },
   "pages": {
     "index": {

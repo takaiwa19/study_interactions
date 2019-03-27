@@ -22,14 +22,14 @@ block contentStatic
           data-range-y = 150
           data-ratio-y = -0.06
           )
-          img(src="/study_interactions/img/case01/image01.jpg", alt="")
+          img(src=`${path}/img/case01/image01.jpg`, alt="")
           .p-case01-section-1__handwrite
             |Weird!
         .p-case01-section-1__image.p-case01-section-1__image--02.js-parallax-item(
           data-range-y = 25
           data-ratio-y = 0.015
           )
-          img(src="/study_interactions/img/case01/image02.jpg", alt="")
+          img(src=`${path}/img/case01/image02.jpg`, alt="")
         h2.p-case01-section-1__heading
           |Hi!
           br
@@ -41,12 +41,12 @@ block contentStatic
       .p-case01-filter__items
         .p-case01-filter__item.js-hover
           .p-case01-filter__item__image
-            img.on(src="/study_interactions/img/case01/gallery01.jpg", alt="")
-            img.under(src="/study_interactions/img/case01/gallery01.jpg", alt="")
+            img.on(src=`${path}/img/case01/gallery01.jpg`, alt="")
+            img.under(src=`${path}/img/case01/gallery01.jpg`, alt="")
         .p-case01-filter__item.js-hover
           .p-case01-filter__item__image
-            img.on(src="/study_interactions/img/case01/gallery02.jpg", alt="")
-            img.under(src="/study_interactions/img/case01/gallery02.jpg", alt="")
+            img.on(src=`${path}/img/case01/gallery02.jpg`, alt="")
+            img.under(src=`${path}/img/case01/gallery02.jpg`, alt="")
       svg
         filter#monochrome(
           color-interpolation-filters="sRGB"
