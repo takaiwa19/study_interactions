@@ -53,7 +53,7 @@
     &-item {
       transform: scaleY(0);
       // transition-timing-function: $easeOutQuad;
-      4ransition-timing-function: cubic-bezier(1, 0, 0, 1) ;
+      transition-timing-function: cubic-bezier(1, 0, 0, 1) ;
       transition-property: transform;
       &--01 {
         transform-origin: top;
