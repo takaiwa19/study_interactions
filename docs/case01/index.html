@@ -33,7 +33,7 @@
       <div class="js-pjax-contents-before">
       </div>
       <!-- Start to define the global header.-->
-      <div class="l-gh"><a class="p-global-home" href="/">
+      <div class="l-gh"><a class="p-global-home js-hover" href="/">
           <div class="p-global-home__label">Home</div></a>
         <div class="p-global-navi" id="vue-global-navi" :class="{ &quot;is-opened-navi&quot; : isOpenedNavi, &quot;is-closed-navi&quot; : !isOpenedNavi}">
           <div class="p-hamberger" @click="toggle">
@@ -43,12 +43,23 @@
               <div class="p-hamberger__line p-hamberger__line--03"></div>
             </div>
           </div>
-          <div class="p-global-navi__items">
+          <div class="p-global-navi__items u-dn-mobile">
             <div class="p-global-navi__items-bg"></div>
             <ul class="p-global-navi__items-wrap">
               <li class="p-global-navi__item"><a href="/case03/">case03</a></li>
               <li class="p-global-navi__item"><a href="/case02/">case02</a></li>
               <li class="p-global-navi__item"><a href="/case01/">case01</a></li>
+            </ul>
+          </div>
+          <div class="p-global-navi-sp" :class="{ &quot;is-opened-navi&quot; : isOpenedNavi, &quot;is-closed-navi&quot; : !isOpenedNavi}">
+            <div class="p-global-navi-sp__bg">
+              <div class="p-global-navi-sp__bg-item p-global-navi-sp__bg-item--01"></div>
+              <div class="p-global-navi-sp__bg-item p-global-navi-sp__bg-item--02"></div>
+            </div>
+            <ul class="p-global-navi-sp__items">
+              <li class="p-global-navi-sp__item"><a href="/case01/">case01</a></li>
+              <li class="p-global-navi-sp__item"><a href="/case02/">case02</a></li>
+              <li class="p-global-navi-sp__item"><a href="/case03/">case03</a></li>
             </ul>
           </div>
         </div>
@@ -57,7 +68,46 @@
       <div class="l-contents js-contents js-pjax-contents">
         <!-- Start to define the main content.-->
         <div class="p-case01">
-          <div class="p-case01-kv"></div>
+          <div class="p-case01-kv">
+            <div class="p-case01-kv__image js-parallax-item" data-range-y="25" data-ratio-y="0.015"></div>
+            <h1 class="p-case01-kv__title">Parallax Study!!</h1>
+          </div>
+          <div class="p-case01-section-1">
+            <div class="p-case01-section-1__wrap">
+              <div class="p-case01-section-1__image p-case01-section-1__image--01 js-parallax-item" data-range-y="150" data-ratio-y="-0.06"><img src="/study_interactions/img/case01/image01.jpg" alt="">
+                <div class="p-case01-section-1__handwrite">Weird!</div>
+              </div>
+              <div class="p-case01-section-1__image p-case01-section-1__image--02 js-parallax-item" data-range-y="25" data-ratio-y="0.015"><img src="/study_interactions/img/case01/image02.jpg" alt=""></div>
+              <h2 class="p-case01-section-1__heading">Hi!<br>I'm ROBOT MAN.</h2>
+              <div class="p-case01-section-1__text">This is the story about a mysterious world...</div>
+            </div>
+          </div>
+          <div class="p-case01-filter">
+            <div class="p-case01-filter__items">
+              <div class="p-case01-filter__item js-hover">
+                <div class="p-case01-filter__item__image"><img class="on" src="/study_interactions/img/case01/gallery01.jpg" alt=""><img class="under" src="/study_interactions/img/case01/gallery01.jpg" alt=""></div>
+              </div>
+              <div class="p-case01-filter__item js-hover">
+                <div class="p-case01-filter__item__image"><img class="on" src="/study_interactions/img/case01/gallery02.jpg" alt=""><img class="under" src="/study_interactions/img/case01/gallery02.jpg" alt=""></div>
+              </div>
+            </div>
+            <svg>
+              <filter id="monochrome" color-interpolation-filters="sRGB">
+                <feComponentTransfer>
+                  <feFuncR type="linear" slope="1.5" intercept="0.05"></feFuncR>
+                  <feFuncG type="linear" slope="1.5" intercept="0.05"></feFuncG>
+                  <feFuncB type="linear" slope="1.5" intercept="0.05"></feFuncB>
+                </feComponentTransfer>
+                <feComponentTransfer>
+                  <feFuncR type="table" tableValues="0.3882 0.898"></feFuncR>
+                  <feFuncG type="table" tableValues="0.2784 0.87"></feFuncG>
+                  <feFuncB type="table" tableValues="0.2509 0.87"></feFuncB>
+                  <feFuncA type="table" tableValues="0 1"></feFuncA>
+                </feComponentTransfer>
+              </filter>
+            </svg>
+          </div>
+          <div class="p-case01-pixi"></div>
         </div>
         <!-- End to define the main content.-->
       </div>
