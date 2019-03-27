@@ -1,10 +1,14 @@
 .p-case01-filter {
   &__items {
     display: flex;
+    @include l-mobile {
+      flex-direction: column;
+    }
   }
   &__item {
-    width: 50vw;
-
+    @include l-more-than-mobile {
+      width: 50vw;
+    }
     &__image {
       position: relative;
       z-index: 1;

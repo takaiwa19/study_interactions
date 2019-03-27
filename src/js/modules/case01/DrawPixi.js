@@ -16,13 +16,12 @@ export default class DrawPixi {
   }
   init() {
     this.width = this.scrollManager.resolution.x;
-    this.height = this.scrollManager.resolution.y;
-
+    this.height = ( this.width < 414 ) ? this.scrollManager.resolution.y / 2 : this.scrollManager.resolution.y;
     // Create a new application
     this.app = new PIXI.Application(
       this.width,
       this.height,
-      {backgroundColor : 0xFFFFFF}
+      {backgroundColor : 0xe5dede}
     );
     this.app.renderer.view.style.position = "absolute";
     this.app.renderer.view.style.display = "block";
@@ -36,10 +35,18 @@ export default class DrawPixi {
     this.scrollManager.resize();
   }
   resize() {
-    this.app.renderer.resize(window.innerWidth, window.innerHeight);
-    this.image.x = this.app.renderer.width / 4;
-    this.image.y = this.app.renderer.height / 4;
-    this.image.width = this.app.renderer.width / 2;
+    this.width = this.scrollManager.resolution.x;
+    this.height = ( this.width < 414 ) ? this.scrollManager.resolution.y / 2 : this.scrollManager.resolution.y;
+    this.app.renderer.resize(this.width, this.height );
+    this.wrap.style.height = this.height;
+
+    this.image.x = this.app.renderer.width / 2;
+    this.image.y = this.app.renderer.height / 2;
+    if (this.width < 414) {
+      this.image.width = this.app.renderer.width * ( 2 / 3 );
+    } else {
+      this.image.width = this.app.renderer.width / 2;
+    }
     this.image.height = this.image.width * ( 667 / 1000 );
 
   }
@@ -53,10 +60,17 @@ export default class DrawPixi {
     //image
     this.image = PIXI.Sprite.fromImage("/study_interactions/img/case01/pixi01.jpg");
     container.addChild(this.image);
-    this.image.x = this.app.renderer.width / 4;
-    this.image.y = this.app.renderer.height / 4;
-    this.image.width = this.app.renderer.width / 2;
+    this.image.x = this.app.renderer.width / 2;
+    this.image.y = this.app.renderer.height / 2;
+    console.log(this.width);
+    if (this.width < 414) {
+      this.image.width = this.app.renderer.width * ( 2 / 3 );
+    } else {
+      this.image.width = this.app.renderer.width / 2;
+    }
     this.image.height = this.image.width * ( 667 / 1000 );
+    this.image.anchor.x = 0.5;
+    this.image.anchor.y = 0.5;
     this.image.interactive = true;
     this.image.cursor = 'pointer';
 
@@ -98,15 +112,20 @@ export default class DrawPixi {
     };
 
     //event
-    this.image.on('mouseover', (event) => {
+    if (this.width < 414) {
       this.app.ticker.add(testFn);
-      this.app.ticker.remove(testFn2);
-    });
+    } else {
+      this.image.on('mouseover', (event) => {
+        this.app.ticker.add(testFn);
+        this.app.ticker.remove(testFn2);
+      });
 
-    this.image.on('mouseout', (event) => {
-      this.app.ticker.remove(testFn);
-      this.app.ticker.add(testFn2);
-    });
+      this.image.on('mouseout', (event) => {
+        this.app.ticker.remove(testFn);
+        this.app.ticker.add(testFn2);
+      });
+    }
+
 
   }
 }

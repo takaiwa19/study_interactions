@@ -1,7 +1,12 @@
 .p-case01-pixi {
   position: relative;
   width: 100%;
-  height: 100vh;
+  @include l-more-than-mobile {
+    height: 100vh;
+  }
+  @include l-mobile {
+    height: 50vh;
+  }
   &__canvas {
     top: 0; left: 0;
   }

@@ -5,24 +5,45 @@
     padding-left: 10rem;
     padding-right: 10rem;
   }
+  @include l-mobile {
+    height: 100vh;
+  }
   &__wrap {
-    width: 70vw;
-    height: 40vw;
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    @include l-more-than-mobile {
+      width: 70vw;
+      height: 40vw;
+    }
+    @include l-mobile {
+      width: 90vw;
+      height: 100%;
+    }
   }
   &__image {
     position: absolute;
     &--01 {
-      width: 30vw;
-      top: 20%; left: 0;
       z-index: 10;
+      @include l-more-than-mobile {
+        width: 30vw;
+        top: 20%; left: 0;
+      }
+      @include l-mobile {
+        width: 60vw;
+        top: 30%; left: 0;
+      }
     }
     &--02 {
-      width: 25vw;
-      top: 10%; left: 30%;
       z-index: 1;
+      @include l-more-than-mobile {
+        width: 25vw;
+        top: 10%; left: 30%;
+      }
+      @include l-mobile {
+        width: 50vw;
+        top: 22%; right: 0;
+      }
     }
     img {
       width: 100%;
@@ -31,14 +52,20 @@
   }
   &__handwrite {
     position: absolute;
-    top: 0; left: -5rem;
     opacity: 0.8;
     color: #f95b5b;
     font-family: $font-en-caveat;
     font-weight: 700;
-    @include fontSize(100);
     line-height: 1;
     transform: rotate(-15deg);
+    @include l-more-than-mobile {
+      top: 0; left: -5rem;
+      @include fontSize(100);
+    }
+    @include l-mobile {
+      top: 70%; left: 1rem;
+      @include fontSize(50);
+    }
   }
   &__heading {
     position: absolute;
@@ -48,18 +75,32 @@
     margin-bottom: 0;
     color: #fff;
     font-family: $font-en-ruslan;
-    @include fontSize(60);
+
     line-height: 1.2;
+    @include l-more-than-mobile {
+      @include fontSize(60);
+    }
+    @include l-mobile {
+      @include fontSize(28);
+    }
   }
   &__text {
     width: 400px;
     position: absolute;
-    top: 60%; right: 0;
+
     z-index: 10;
     color: #fff;
     font-family: $font-en-poppins;
-    @include fontSize(36);
+
     font-weight: 700;
     line-height: 1.2;
+    @include l-more-than-mobile {
+      top: 60%; right: 0;
+      @include fontSize(36);
+    }
+    @include l-mobile {
+      top: 70%; left: 0;
+      @include fontSize(24);
+    }
   }
 }
